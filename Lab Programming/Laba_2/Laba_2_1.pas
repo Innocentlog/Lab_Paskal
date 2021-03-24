@@ -3,7 +3,7 @@ var
 max,min1,min2,x,y,z,res3:real;
   
 begin
-     writeln('Введите X,Y,Z:');
+     writeln('Р’РІРµРґРёС‚Рµ X,Y,Z:');
      read(x,y,z);
      
     max:= y;
