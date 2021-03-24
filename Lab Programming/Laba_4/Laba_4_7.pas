@@ -1,0 +1,55 @@
+//Дан двумерный массив. Сформировать одномерный массив, каждый элемент которого равен произведению положительных элементов соответствующей строки.
+program n_7;
+const nmax=15;
+var 
+a:array[1..nmax,1..nmax] of integer;
+b:array[1..nmax] of integer;
+m,n,i,j,imx,jmx:byte;
+mx:integer;
+begin
+//двумерный массив
+
+repeat
+write('Количество строк до ',nmax,' m =');
+read(m);
+
+until m in [1..nmax];
+repeat
+write('Количество столбцов до ',nmax,' n =');
+read(n);
+
+until n in [1..nmax];
+writeln('Элементы:');
+for i:=1 to m do  
+  for j:=1 to n do
+   read(a[i,j]);
+
+//двумерный массив
+
+write('Ваша матрица:');
+writeln();
+for i:=1 to m do 
+begin 
+ for j:=1 to n do 
+ begin
+ write('|',a[i,j]:3);
+ end;
+ writeln('|');
+ end;
+
+
+for i:=1 to m do begin 
+ b[i]:=a[i,1];
+ for j:=2 to n do begin 
+  if (a[i,j]>b[i]) then b[i]:=a[i,j]
+ end;
+ end;
+     
+     
+
+writeln;
+writeln('Формирование одномерного массива:');
+ for i:=1 to m do 
+ write ('|',b[i]:2);
+write('|'); 
+end.
